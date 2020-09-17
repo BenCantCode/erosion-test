@@ -1,0 +1,12 @@
+[package]
+name = "erosion"
+version = "0.1.0"
+authors = ["BenCantCode <benthegarvin@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+noise = "0.6.0"
+image = "0.23.9"
+palette = "0.5.0"
