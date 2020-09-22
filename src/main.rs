@@ -29,7 +29,7 @@ fn main() {
     for y in 0..256 {
         for x in 0..256 {
             map.push(
-                (fbm.get([(x as f64) / 500. + 10485.4, (y as f64) / 500., 1.]) * (256 as f64)) as f32,
+                (fbm.get([(x as f64) / 500. + 485.4, (y as f64) / 500., 1.]) * (256 as f64)) as f32,
             );
         }
     }
@@ -73,6 +73,7 @@ fn main() {
     steep_img.save("steep.bmp").unwrap();
 }
 
+// Probably overkill, but this helps me visualize the subpixel overlap better.
 struct Rect {
     ymin: f32,
     ymax: f32,
