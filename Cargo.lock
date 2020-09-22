@@ -158,6 +158,7 @@ dependencies = [
  "image 0.23.9",
  "noise",
  "palette",
+ "rand 0.7.3",
 ]
 
 [[package]]
