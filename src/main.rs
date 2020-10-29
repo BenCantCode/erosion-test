@@ -1,5 +1,5 @@
 use image::{ImageBuffer, Rgb, Luma};
-use noise::{Fbm, NoiseFn};
+use noise::{Fbm, HybridMulti, RidgedMulti, NoiseFn};
 use palette::{Hsl, IntoColor, Srgb, RgbHue};
 use std::f32;
 use std::io;
@@ -20,7 +20,7 @@ Regardless, it looks pretty cool when graphed as an image too.
 */
 
 fn main() {
-    let fbm = Fbm::new();
+    let noise = Fbm::new();
 
     // 256x256 heightmap
     let mut map: Vec<f32> = Vec::with_capacity(256 * 256);
@@ -29,7 +29,7 @@ fn main() {
     for y in 0..256 {
         for x in 0..256 {
             map.push(
-                (fbm.get([(x as f64) / 500. + 485.4, (y as f64) / 500., 1.]) * (256 as f64)) as f32,
+                (noise.get([(x as f64) / 500. + 300.0, (y as f64) / 500., 1.]) * 128f64 + 128f64) as f32,
             );
         }
     }
